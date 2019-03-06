@@ -16,12 +16,19 @@ public class WebSocketServer {
         ServerBootstrap serverBootstrap = new ServerBootstrap();
 
         try {
+            String host = "localhost";
+            if (args != null && args.length > 0) {
+                host = args[0];
+            }
             ChannelFuture future = serverBootstrap.group(boss, worker)
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new WebSocketInitializer())
                     .option(ChannelOption.SO_BACKLOG, 128)
-                    .bind("192.168.0.102", 8088)
+//                    .bind("47.107.162.182", 8888)
+                    .bind(host, 8888)
                     .sync();
+
+            System.out.println("启动成功");
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -1,6 +1,8 @@
 package com.jacky.imserver;
 
+import lombok.Data;
 
+@Data
 public class MsgVO {
 
     /**
@@ -15,44 +17,4 @@ public class MsgVO {
     private String msg;
 
     private String sendTime;
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    public String getFromName() {
-        return fromName;
-    }
-
-    public void setFromName(String fromName) {
-        this.fromName = fromName;
-    }
-
-    public String getFromId() {
-        return fromId;
-    }
-
-    public void setFromId(String fromId) {
-        this.fromId = fromId;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public String getSendTime() {
-        return sendTime;
-    }
-
-    public void setSendTime(String sendTime) {
-        this.sendTime = sendTime;
-    }
 }
